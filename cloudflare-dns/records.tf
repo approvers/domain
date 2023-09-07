@@ -77,4 +77,3 @@ resource "cloudflare_record" "github-challenge" {
   value   = "78c0bfbf92"
   zone_id = local.cloudflare_zone_id
 }
-
