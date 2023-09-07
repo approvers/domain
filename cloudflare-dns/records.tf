@@ -41,7 +41,7 @@ resource "cloudflare_record" "containers2" {
 resource "cloudflare_record" "docs" {
   name    = "docs"
   proxied = true
-  type    = "A"
+  type    = "CNAME"
   value   = "docs-bsw.pages.dev"
   zone_id = local.cloudflare_zone_id
 }
