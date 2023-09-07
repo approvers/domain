@@ -21,7 +21,7 @@ jobs:
           cli_config_credentials_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           terraform_version: 1.5.6
 
-      - run: init
+      - run: terraform init
         working-directory: "./cloudflare-dns"
 
       - name: apply

@@ -18,7 +18,7 @@ jobs:
         run: terraform fmt -check
         working-directory: "./cloudflare-dns"
 
-      - run: init
+      - run: terraform init
         working-directory: "./cloudflare-dns"
 
       - name: validate
