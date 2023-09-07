@@ -1,14 +1,14 @@
 terraform {
   required_providers {
     cloudflare = {
-        source = "cloudflare/cloudflare"
-        version = "~> 3.0"
+      source  = "cloudflare/cloudflare"
+      version = "~> 3.0"
     }
   }
 }
 
 variable "cloudflare_api_token" {
-  type = string
+  type      = string
   sensitive = true
 }
 
