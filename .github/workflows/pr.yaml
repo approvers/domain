@@ -1,0 +1,31 @@
+name: Terraform (PR)
+
+on:
+  pull_request:
+
+jobs:
+  plan:
+    name: tf plan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v2
+        with:
+          cli_config_credentials_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          terraform_version: 1.5.6
+
+      - name: fmt
+        run: terraform fmt -check
+        working-directory: "./cloudflare-dns"
+
+      - run: init
+        working-directory: "./cloudflare-dns"
+
+      - name: validate
+        run: terraform validate -no-color
+        working-directory: "./cloudflare-dns"
+
+      - name: plan
+        run: terraform plan -input=false -no-color -lock-timeout=10m
+        id: tfplan
+        working-directory: "./cloudflare-dns"
