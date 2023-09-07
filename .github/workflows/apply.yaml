@@ -5,7 +5,7 @@ on:
     branches:
       - "main"
     path:
-      - "*.tf"
+      - "**.tf"
       - ".terraform.lock.hcl"
   workflow_dispatch:
 
