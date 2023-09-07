@@ -1,0 +1,3 @@
+cloudflare-dns/.terraform/
+cloudflare-dns/terraform.tfstate
+cloudflare-dns/terraform.tfstate.*
