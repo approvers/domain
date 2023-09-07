@@ -29,3 +29,5 @@ jobs:
         run: terraform plan -input=false -no-color -lock-timeout=10m
         id: tfplan
         working-directory: "./cloudflare-dns"
+        env:
+          TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
