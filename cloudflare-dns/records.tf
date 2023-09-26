@@ -77,3 +77,11 @@ resource "cloudflare_record" "github-challenge" {
   value   = "78c0bfbf92"
   zone_id = local.cloudflare_zone_id
 }
+
+resource "cloudflare_record" "msky-fqdn" {
+  name    = "msky.approvers.dev"
+  proxied = false
+  type    = "CNAME"
+  value   = "mi.ext.misskey-idime.gcp.pulsate.dev"
+  zone_id = local.cloudflare_zone_id
+}
