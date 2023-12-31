@@ -77,3 +77,11 @@ resource "cloudflare_record" "msky-fqdn" {
   value   = "mi.ext.misskey-idime.gcp.pulsate.dev"
   zone_id = local.cloudflare_zone_id
 }
+
+resource "cloudflare_record" "ichiyo-ai-docs" {
+  name    = "ichiyoai"
+  proxied = true
+  type    = "CNAME"
+  value   = "approvers.github.io"
+  zone_id = local.cloudflare_zone_id
+}
