@@ -38,14 +38,6 @@ resource "cloudflare_record" "containers2" {
   zone_id = local.cloudflare_zone_id
 }
 
-resource "cloudflare_record" "docs" {
-  name    = "docs"
-  proxied = true
-  type    = "CNAME"
-  value   = "docs-bsw.pages.dev"
-  zone_id = local.cloudflare_zone_id
-}
-
 resource "cloudflare_record" "edit-members" {
   name    = "edit.members"
   proxied = true
@@ -83,5 +75,13 @@ resource "cloudflare_record" "msky-fqdn" {
   proxied = false
   type    = "CNAME"
   value   = "mi.ext.misskey-idime.gcp.pulsate.dev"
+  zone_id = local.cloudflare_zone_id
+}
+
+resource "cloudflare_record" "ichiyo-ai-docs" {
+  name    = "ichiyoai"
+  proxied = true
+  type    = "CNAME"
+  value   = "approvers.github.io"
   zone_id = local.cloudflare_zone_id
 }
